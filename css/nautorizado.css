@@ -1,0 +1,16 @@
+body{
+    background: url(../imagens/naoautorizado.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+#centro {
+    padding: 10px;
+}
+
+.text-center{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
