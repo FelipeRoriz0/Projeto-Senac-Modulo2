@@ -53,12 +53,12 @@ $linha = $con->fetch_assoc();
     do{
     ?>
         <tr>
-            <td> <?php echo $linha['nome'];?> </td>
-            <td> <?php echo $linha['cpf'];?> </td>
-            <td> <?php echo $linha['rg'];?> </td>
-            <td> <?php echo date("d/m/Y", strtotime($linha['datanascimento']));?> </td>
-            <td> <?php echo $linha['endereco'];?> </td>
-            <td> <?php echo $linha['anotacoes'];?> </td>
+            <td> <?php echo $linha['nome'] ?? null;?> </td>
+            <td> <?php echo $linha['cpf'] ?? null;?> </td>
+            <td> <?php echo $linha['rg'] ?? null;?> </td>
+            <td> <?php echo date("d/m/Y", strtotime($linha['datanascimento'] ?? null));?> </td>
+            <td> <?php echo $linha['endereco'] ?? null;?> </td>
+            <td> <?php echo $linha['anotacoes'] ?? null;?> </td>
 
             <td>
                 <a class="btn btn-danger btn-mg active " role="button" href="deletar.php?p=deletar&id=<?php echo $linha['id'];?>">Deletar</a>
