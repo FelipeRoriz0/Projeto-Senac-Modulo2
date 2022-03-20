@@ -4,8 +4,6 @@ include('conexao.php');
 $consulta="SELECT * FROM tb_cadastro";
 $con = $mysqli->query($consulta) or die($mysqli->error);
 $linha = $con->fetch_assoc();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -14,29 +12,31 @@ $linha = $con->fetch_assoc();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Painel do Sistema</title>
     <!--Bootstrap-->
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sistema.css">
+    <link rel="shortcut icon" href="../imagens/favicon-sistema.png" type="image/x-icon">
 </head>
 <body id="fundo-sistema">
 
 <nav class="navbar navbar-light bg-success">
+
+
 <a class="navbar-brand">
-
-
 <img src="../imagens/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
 
  Bem-vindo ao Sistema <?php echo $_SESSION['nome'];?>
 
-  </a>
+</a>
+
 </nav>
     <br>
     <h1 class="text-center">PESSOAS A SER MONITORADAS</h1>
     
     
     <div class="table-responsive">
-    <table class="table ">
+    <table class="table">
     <thead >
         
         <tr class="table-success" >
@@ -61,7 +61,7 @@ $linha = $con->fetch_assoc();
             <td> <?php echo $linha['anotacoes'] ?? null;?> </td>
 
             <td>
-                <a class="btn btn-danger btn-mg active " role="button" href="deletar.php?p=deletar&id=<?php echo $linha['id'];?>">Deletar</a>
+                <a class="btn btn-danger btn-mg active " role="button" href="deletar.php?p=deletar&id=<?php echo $linha['id'] ?? null;?>">Deletar</a>
             </td>
 
         </tr>
@@ -72,7 +72,6 @@ $linha = $con->fetch_assoc();
     </table>
 
     </div>
-
-     <a href="logout.php" class="btn btn-success btn-mg active " role="button" aria-pressed="true" >Sair</a> </button>
+     <a href="logout.php" class="btn btn-success btn-mg active " id="botaosair" role="button" aria-pressed="true" >Sair</a> </button>
 </body>
 </html>
