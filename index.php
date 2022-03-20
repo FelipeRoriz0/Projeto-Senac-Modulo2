@@ -1,6 +1,6 @@
    <?php
 	    //Importações
-	    include('includes/conexao.php');
+	    include('app/scripts/conexao.php');
 	    
 	    include('includes/form.php');
 	   

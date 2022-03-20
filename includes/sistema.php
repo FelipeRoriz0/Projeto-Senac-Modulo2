@@ -1,6 +1,6 @@
 <?php
-include('protecao.php');
-include('conexao.php');
+include('../app/scripts/protecao.php');
+include('../app/scripts/conexao.php');
 $consulta="SELECT * FROM tb_cadastro";
 $con = $mysqli->query($consulta) or die($mysqli->error);
 $linha = $con->fetch_assoc();
@@ -61,7 +61,7 @@ $linha = $con->fetch_assoc();
             <td> <?php echo $linha['anotacoes'] ?? null;?> </td>
 
             <td>
-                <a class="btn btn-danger btn-mg active " role="button" href="deletar.php?p=deletar&id=<?php echo $linha['id'] ?? null;?>">Deletar</a>
+                <a class="btn btn-danger btn-mg active " role="button" href="../app/scripts/deletar.php?p=deletar&id=<?php echo $linha['id'] ?? null;?>">Deletar</a>
             </td>
 
         </tr>
@@ -72,6 +72,6 @@ $linha = $con->fetch_assoc();
     </table>
 
     </div>
-     <a href="logout.php" class="btn btn-success btn-mg active " id="botaosair" role="button" aria-pressed="true" >Sair</a> </button>
+     <a href="../app/scripts/logout.php" class="btn btn-success btn-mg active " id="botaosair" role="button" aria-pressed="true" >Sair</a> </button>
 </body>
 </html>

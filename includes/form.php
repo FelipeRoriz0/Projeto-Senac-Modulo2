@@ -39,7 +39,7 @@
 
 <?php
  //Importações
- include('includes/conexao.php');
+ include('app/scripts/conexao.php');
 
  if(isset($_POST['email']) || isset($_POST['senha'])) {
 
