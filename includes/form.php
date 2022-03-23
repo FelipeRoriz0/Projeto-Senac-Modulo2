@@ -43,30 +43,41 @@
 
  if(isset($_POST['email']) || isset($_POST['senha'])) {
 
- //Analisa se o email e senha estão preenchidos//
+ //Verifica se existe o email e senha & e se foram ou não preenchidos//
  if(strlen($_POST['email']) == 0) {
      echo "Preencha seu e-mail";
  } else if(strlen($_POST['senha']) == 0) {
      echo "Preencha sua senha";
  } else {
 
+
+// Proteção para a pessoa não conseguir acessar o BD errando a senha 
  $email = $mysqli->real_escape_string($_POST['email']);
  $senha = $mysqli->real_escape_string($_POST['senha']);
 
+// Recebe a query do BD de usuarios 
  $sql_code = "SELECT * FROM tb_users WHERE email = '$email' AND senha = '$senha'";
+// Recebe a variavel sql code e se dêe erro mata a execução e mostra o erro
  $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
+// A variavel quantidade recebe a quantidade de linhas da variavel sql_query 
  $quantidade = $sql_query->num_rows;
 
+// se quantidade de linha for igual a 1 irá abrir um sessão
  if($quantidade == 1) {
-         
+
+// Irá pegar os dados do BD e armazenará na variavel Usuario 
      $usuario = $sql_query->fetch_assoc();
+// Se não tiver sessão irar iniciar uma sessão
      if(!isset($_SESSION)) {
          session_start();
          }
+   
+// Irá armanezar na Sessão a ID e irá mostrar o nome do usuario já cadastrado no BD, na pagina do sistema
      $_SESSION['id'] = $usuario['id'];
      $_SESSION['nome'] = $usuario['nome'];
 
+// Irá Redicionarar para a pagina de sistema
      header("Location: includes/sistema.php");
 
      } else {
