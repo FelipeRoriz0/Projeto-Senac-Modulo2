@@ -77,7 +77,7 @@
      $_SESSION['id'] = $usuario['id'];
      $_SESSION['nome'] = $usuario['nome'];
 
-// Irá Redicionarar para a pagina de sistema
+// Irá Redireciona para a pagina de sistema
      header("Location: includes/sistema.php");
 
      } else {
