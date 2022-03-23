@@ -1,0 +1,59 @@
+CREATE DATABASE bd_projeto;
+use bd_projeto;
+
+CREATE TABLE tb_users(
+id int primary key auto_increment,
+nome varchar(400) not null,
+email varchar(400) not null,
+senha varchar(400) not null
+);
+
+SELECT * FROM tb_users;
+
+INSERT INTO `tb_users` (`id`, `nome`, `email`, `senha`) VALUES (NULL, 'Felipe Roriz', 'Felipe@gmail.com', '123456');
+
+
+CREATE TABLE tb_cadastro(
+id int primary key auto_increment,
+nome varchar(400) not null,
+cpf varchar(50) not null,
+rg varchar(50) not null,
+datanascimento date not null,
+endereco varchar(300) not null, 
+anotacoes varchar(300) not null
+);
+
+SELECT * FROM tb_cadastro;
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Afonso Gomes Lima', '125.698.987-78', '12.532.321-9', '1975-01-10', 'Rua João Carlos C. Giraldes', 'Fugiu para cuba');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Fernando Silva Souza', '123.654.987-98', '29.478.183-3', '1996-06-05', 'Estrada da rua', 'Sumiu');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Ricardo Juan Pires', '919.199.378-46', '30.124.380-3', '1968-06-09', 'Rua Monte Alto', 'Assassino');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Noah Isaac da Mata', '120.175.307-43', '22.841.320-5', '1990-06-08', 'Rua Paraguai', 'Viajou junto com Mirellaa');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Livia Maitê Ribeiro', '353.386.000-05', '30.292.941-1', '1999-06-05', 'Rua Limeira', 'Assalto');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Sabrina Betina Souza', '569.556.882-00', '11.318.295-8', '1992-02-10', 'Rua Perimetral Dois', 'Fugiu do brasil');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Natalia Sophia Sebastiana Martins', '319.683.804-85', '24.614.104-9', '1965-02-16', 'Alameda dos Andrades', 'Roubou um banco e foi para venezuela');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Mirella Melissa Bernardes', '449.717.936-23', '31.827.871-6', '2000-06-08', 'Rua Whashingtn', 'Viajou para os EUA');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Mariah Lorena Nunes', '168.641.267-30', '35.786.330-6', '1962-04-05', 'Rua Menino Jesus	', 'Ganhou 19 vezes na loteria, possível fraude na loteria.');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Manuel Marcos Vinicius da Costa	', '516.957.146-10', '12.163.456-5', '1995-06-05', 'Rua Doze', 'Participa de uma célula racista	');
+
+INSERT INTO `tb_cadastro` (`id`, `nome`, `cpf`, `rg`, `datanascimento`, `endereco`, `anotacoes`) VALUES 
+(NULL, 'Marli Luana Teixeira', '463.840.228-34', '18.046.068-7', '1977-10-28', 'Rua Cuba', 'viajou para Venezuela, para se encontrar com membros do governo');
